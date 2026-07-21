@@ -1,0 +1,84 @@
+<h1>Student Enrollment Form</h1>
+
+<form #enrollForm="ngForm" (ngSubmit)="onSubmit()">
+
+  <label>Name</label><br>
+
+  <input
+    type="text"
+    name="name"
+    [(ngModel)]="student.name"
+    required
+    #name="ngModel">
+
+  <div *ngIf="name.invalid && name.touched" style="color:red">
+    Name is required
+  </div>
+
+  <br><br>
+
+  <label>Email</label><br>
+
+  <input
+    type="email"
+    name="email"
+    [(ngModel)]="student.email"
+    required
+    email
+    #email="ngModel">
+
+  <div *ngIf="email.invalid && email.touched" style="color:red">
+    Valid email is required
+  </div>
+
+  <br><br>
+
+  <label>Course</label><br>
+
+  <select
+    name="course"
+    [(ngModel)]="student.course"
+    required
+    #course="ngModel">
+
+    <option value="">Select Course</option>
+    <option>Angular</option>
+    <option>Java</option>
+    <option>Python</option>
+    <option>SQL</option>
+
+  </select>
+
+  <div *ngIf="course.invalid && course.touched" style="color:red">
+    Please select a course
+  </div>
+
+  <br><br>
+
+  <button
+    type="submit"
+    [disabled]="enrollForm.invalid">
+    Submit
+  </button>
+
+  <button
+    type="button"
+    (click)="resetForm()">
+    Reset
+  </button>
+
+</form>
+
+<hr>
+
+<div *ngIf="submitted">
+
+  <h3>Enrollment Details</h3>
+
+  <p><strong>Name:</strong> {{ student.name }}</p>
+
+  <p><strong>Email:</strong> {{ student.email }}</p>
+
+  <p><strong>Course:</strong> {{ student.course }}</p>
+
+</div>

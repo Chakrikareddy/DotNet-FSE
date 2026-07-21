@@ -1,0 +1,57 @@
+<h1>Course Search</h1>
+
+<input
+type="text"
+placeholder="Search Course"
+[(ngModel)]="searchText">
+
+<br><br>
+
+<p>
+
+Today :
+
+{{today | date:'fullDate'}}
+
+</p>
+
+<hr>
+
+<div
+*ngFor="let c of courses | search:searchText">
+
+<app-course-card
+
+[course]="c"
+
+(enrollRequested)="onEnroll($event)">
+
+</app-course-card>
+
+<p>
+
+Course Name :
+
+{{c.name | uppercase}}
+
+</p>
+
+<p>
+
+Course Code :
+
+{{c.code | lowercase}}
+
+</p>
+
+<p>
+
+Fee :
+
+{{c.fee | currency:'INR'}}
+
+</p>
+
+<hr>
+
+</div>

@@ -1,0 +1,79 @@
+<h1>Reactive Enrollment Form</h1>
+
+<form [formGroup]="enrollmentForm" (ngSubmit)="onSubmit()">
+
+  <label>Name</label>
+
+  <input
+    type="text"
+    formControlName="name">
+
+  <div
+    *ngIf="enrollmentForm.controls.name.invalid &&
+            enrollmentForm.controls.name.touched"
+    style="color:red">
+
+    Name is required
+
+  </div>
+
+  <br><br>
+
+  <label>Email</label>
+
+  <input
+    type="email"
+    formControlName="email">
+
+  <div
+    *ngIf="enrollmentForm.controls.email.invalid &&
+            enrollmentForm.controls.email.touched"
+    style="color:red">
+
+    Valid Email Required
+
+  </div>
+
+  <br><br>
+
+  <label>Course</label>
+
+  <select formControlName="course">
+
+    <option value="">Select Course</option>
+
+    <option>Angular</option>
+
+    <option>Java</option>
+
+    <option>Python</option>
+
+    <option>SQL</option>
+
+  </select>
+
+  <br><br>
+
+  <button
+    type="submit"
+    [disabled]="enrollmentForm.invalid">
+
+    Submit
+
+  </button>
+
+  <button
+    type="button"
+    (click)="resetForm()">
+
+    Reset
+
+  </button>
+
+</form>
+
+<hr>
+
+<h3>Form Value</h3>
+
+<pre>{{ enrollmentForm.value | json }}</pre>
