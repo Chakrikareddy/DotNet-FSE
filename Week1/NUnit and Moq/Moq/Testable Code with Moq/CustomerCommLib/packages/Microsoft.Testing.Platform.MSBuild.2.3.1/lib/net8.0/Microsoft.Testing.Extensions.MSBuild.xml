@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Testing.Extensions.MSBuild</name>
+    </assembly>
+    <members>
+        <member name="P:Microsoft.Testing.Extensions.MSBuild.Resources.ExtensionResources.MSBuildExtensionsDescription">
+            <summary>Extension used to pass parameters from MSBuild node and the hosts</summary>
+        </member>
+        <member name="T:Microsoft.Testing.Platform.MSBuild.MSBuildExtensions">
+            <summary>
+            Extension methods for adding MSBuild support to the test application builder.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Testing.Platform.MSBuild.MSBuildExtensions.AddMSBuild(Microsoft.Testing.Platform.Builder.ITestApplicationBuilder)">
+            <summary>
+            Adds MSBuild support to the test application builder.
+            </summary>
+            <param name="builder">The test application builder.</param>
+        </member>
+        <member name="T:Microsoft.Testing.Platform.MSBuild.TestingPlatformBuilderHook">
+            <summary>
+            This class is used by Microsoft.Testing.Platform.MSBuild to hook into the Testing Platform Builder to add MSBuild support.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Testing.Platform.MSBuild.TestingPlatformBuilderHook.AddExtensions(Microsoft.Testing.Platform.Builder.ITestApplicationBuilder,System.String[])">
+            <summary>
+            Adds MSBuild support to the Testing Platform Builder.
+            </summary>
+            <param name="testApplicationBuilder">The test application builder.</param>
+            <param name="_">The command line arguments.</param>
+        </member>
+        <member name="M:Microsoft.Testing.Platform.IPC.NamedPipeClient.#ctor(System.String,Microsoft.Testing.Platform.Helpers.IEnvironment,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Testing.Platform.IPC.NamedPipeClient"/> class connecting to the named pipe
+            <paramref name="name"/>.
+            </summary>
+            <param name="name">The OS-level named pipe name to connect to.</param>
+            <param name="environment">The environment abstraction used for process-exit on connection loss.</param>
+            <param name="exitProcessOnConnectionLoss">
+            When <see langword="true"/> (the default) a lost connection - the server disconnecting while we write a
+            request or before it sends a response - terminates the process via <see cref="M:Microsoft.Testing.Platform.Helpers.IEnvironment.Exit(System.Int32)"/>.
+            This is the right behavior for the primary data pipe: if we cannot talk to the host there is no way to
+            recover. Set it to <see langword="false"/> for auxiliary channels (e.g. the reverse server-control pipe)
+            where a dropped connection should surface as an exception the caller can handle cooperatively rather than
+            killing the whole test host.
+            </param>
+        </member>
+        <member name="M:Microsoft.Testing.Platform.IPC.NamedPipeConnectionBase.WriteMessageAsync(System.IO.Pipes.PipeStream,Microsoft.Testing.Platform.IPC.INamedPipeSerializer,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            Serializes <paramref name="message"/> using <paramref name="serializer"/>, frames it with a
+            4-byte size header and 4-byte serializer-ID prefix, writes the frame to <paramref name="stream"/>,
+            flushes, and (on Windows) waits for the pipe to drain.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Testing.Platform.IPC.NamedPipeConnectionBase.ReadNextMessageAsync(System.IO.Pipes.PipeStream,System.Threading.CancellationToken)">
+            <summary>
+            Reads one complete framed message from <paramref name="stream"/>, deserializes it, and returns
+            the result.  Returns <see langword="null"/> when the stream reaches EOF (peer disconnected).
+            </summary>
+        </member>
+        <member name="M:Microsoft.Testing.Platform.IPC.NamedPipeConnectionBase.DisposeBuffers">
+            <summary>Disposes the shared serialization and message buffers.</summary>
+        </member>
+        <member name="M:Microsoft.Testing.Platform.IPC.NamedPipeServer.InternalLoopAsync(System.Threading.CancellationToken)">
+            <summary>
+            4 bytes = message size
+            ------- Payload -------
+            4 bytes = serializer id
+            x bytes = object buffer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Testing.Platform.RoslynString.IsNullOrEmpty(System.String)">
+            <inheritdoc cref="M:System.String.IsNullOrEmpty(System.String)"/>
+        </member>
+        <member name="M:Microsoft.Testing.Platform.RoslynString.IsNullOrWhiteSpace(System.String)">
+            <inheritdoc cref="M:System.String.IsNullOrWhiteSpace(System.String)"/>
+        </member>
+        <member name="T:Microsoft.Testing.Platform.Helpers.ExitCode">
+            <summary>
+            We use positive exit codes for failure because POSIX/BASH exit codes are unsigned 8-bit integers.
+            On POSIX systems the standard exit code is 0 for success and any number from 1 to 255 for anything else.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Testing.Platform.Helpers.TimeSpanParser.GetRegex">
+            <remarks>
+            Pattern:<br/>
+            <code>^(?&lt;value&gt;\\d+(?:\\.\\d+)?)(?:\\s*(?&lt;suffix&gt;ms|mils?|milliseconds?|s|secs?|seconds?|m|mins?|minutes?|h|hours?|d|days?))?$</code><br/>
+            Options:<br/>
+            <code>RegexOptions.IgnoreCase | RegexOptions.CultureInvariant</code><br/>
+            Explanation:<br/>
+            <code>
+            ○ Match if at the beginning of the string.<br/>
+            ○ "value" capture group.<br/>
+                ○ Match a Unicode digit greedily at least once.<br/>
+                ○ Optional (greedy).<br/>
+                    ○ Match '.'.<br/>
+                    ○ Match a Unicode digit greedily at least once.<br/>
+            ○ Optional (greedy).<br/>
+                ○ Match a whitespace character atomically any number of times.<br/>
+                ○ "suffix" capture group.<br/>
+                    ○ Match with 13 alternative expressions.<br/>
+                        ○ Match a sequence of expressions.<br/>
+                            ○ Match a character in the set [Mm].<br/>
+                            ○ Match a character in the set [Ss].<br/>
+                        ○ Match a sequence of expressions.<br/>
+                            ○ Match a character in the set [Mm].<br/>
+                            ○ Match a character in the set [Ii].<br/>
+                            ○ Match a character in the set [Ll].<br/>
+                            ○ Match a character in the set [Ss] greedily, optionally.<br/>
+                        ○ Match a sequence of expressions.<br/>
+                            ○ Match a character in the set [Mm].<br/>
+                            ○ Match a character in the set [Ii].<br/>
+                            ○ Match a character in the set [Ll] exactly 2 times.<br/>
+                            ○ Match a character in the set [Ii].<br/>
+                            ○ Match a character in the set [Ss].<br/>
+                            ○ Match a character in the set [Ee].<br/>
+                            ○ Match a character in the set [Cc].<br/>
+                            ○ Match a character in the set [Oo].<br/>
+                            ○ Match a character in the set [Nn].<br/>
+                            ○ Match a character in the set [Dd].<br/>
+                            ○ Match a character in the set [Ss] greedily, optionally.<br/>
+                        ○ Match a character in the set [Ss].<br/>
+                        ○ Match a sequence of expressions.<br/>
+                            ○ Match a character in the set [Ss].<br/>
+                            ○ Match a character in the set [Ee].<br/>
+                            ○ Match a character in the set [Cc].<br/>
+                            ○ Match a character in the set [Ss] greedily, optionally.<br/>
+                        ○ Match a sequence of expressions.<br/>
+                            ○ Match a character in the set [Ss].<br/>
+                            ○ Match a character in the set [Ee].<br/>
+                            ○ Match a character in the set [Cc].<br/>
+                            ○ Match a character in the set [Oo].<br/>
+                            ○ Match a character in the set [Nn].<br/>
+                            ○ Match a character in the set [Dd].<br/>
+                            ○ Match a character in the set [Ss] greedily, optionally.<br/>
+                        ○ Match a character in the set [Mm].<br/>
+                        ○ Match a sequence of expressions.<br/>
+                            ○ Match a character in the set [Mm].<br/>
+                            ○ Match a character in the set [Ii].<br/>
+                            ○ Match a character in the set [Nn].<br/>
+                            ○ Match a character in the set [Ss] greedily, optionally.<br/>
+                        ○ Match a sequence of expressions.<br/>
+                            ○ Match a character in the set [Mm].<br/>
+                            ○ Match a character in the set [Ii].<br/>
+                            ○ Match a character in the set [Nn].<br/>
+                            ○ Match a character in the set [Uu].<br/>
+                            ○ Match a character in the set [Tt].<br/>
+                            ○ Match a character in the set [Ee].<br/>
+                            ○ Match a character in the set [Ss] greedily, optionally.<br/>
+                        ○ Match a character in the set [Hh].<br/>
+                        ○ Match a sequence of expressions.<br/>
+                            ○ Match a character in the set [Hh].<br/>
+                            ○ Match a character in the set [Oo].<br/>
+                            ○ Match a character in the set [Uu].<br/>
+                            ○ Match a character in the set [Rr].<br/>
+                            ○ Match a character in the set [Ss] greedily, optionally.<br/>
+                        ○ Match a character in the set [Dd].<br/>
+                        ○ Match a sequence of expressions.<br/>
+                            ○ Match a character in the set [Dd].<br/>
+                            ○ Match a character in the set [Aa].<br/>
+                            ○ Match a character in the set [Yy].<br/>
+                            ○ Match a character in the set [Ss] greedily, optionally.<br/>
+            ○ Match if at the end of the string or if before an ending newline.<br/>
+            </code>
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Testing.Platform.Helpers.TimeSpanParser.TryParseRequireSuffix(System.String,System.TimeSpan@)">
+            <summary>
+            Parses a time value. Inputs without an explicit unit suffix (e.g. a bare number like "200")
+            are rejected. Use this overload for options where the unit must be explicit.
+            </summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.GetRegex_0">
+            <summary>Custom <see cref="T:System.Text.RegularExpressions.Regex"/>-derived type for the GetRegex method.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.GetRegex_0.Instance">
+            <summary>Cached, thread-safe singleton instance.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.GetRegex_0.#ctor">
+            <summary>Initializes the instance.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.GetRegex_0.RunnerFactory">
+            <summary>Provides a factory for creating <see cref="T:System.Text.RegularExpressions.RegexRunner"/> instances to be used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.GetRegex_0.RunnerFactory.CreateInstance">
+            <summary>Creates an instance of a <see cref="T:System.Text.RegularExpressions.RegexRunner"/> used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.GetRegex_0.RunnerFactory.Runner">
+            <summary>Provides the runner that contains the custom logic implementing the specified regular expression.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.GetRegex_0.RunnerFactory.Runner.Scan(System.ReadOnlySpan{System.Char})">
+            <summary>Scan the <paramref name="inputSpan"/> starting from base.runtextstart for the next match.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.GetRegex_0.RunnerFactory.Runner.TryFindNextPossibleStartingPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Search <paramref name="inputSpan"/> starting from base.runtextpos for the next location a match could possibly start.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if a possible match was found; false if no more matches are possible.</returns>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.GetRegex_0.RunnerFactory.Runner.TryMatchAtCurrentPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Determine whether <paramref name="inputSpan"/> at base.runtextpos is a match for the regular expression.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if the regular expression matches at the current position; otherwise, false.</returns>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.Utilities">
+            <summary>Helper methods used by generated <see cref="T:System.Text.RegularExpressions.Regex"/>-derived implementations.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_defaultTimeout">
+            <summary>Default timeout value set in <see cref="T:System.AppContext"/>, or <see cref="F:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout"/> if none was set.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_hasTimeout">
+            <summary>Whether <see cref="F:System.Text.RegularExpressions.Generated.Utilities.s_defaultTimeout"/> is non-infinite.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.Utilities.StackPop(System.Int32[],System.Int32@,System.Int32@,System.Int32@)">
+            <summary>Pops 2 values from the backtracking stack.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.Utilities.StackPush(System.Int32[]@,System.Int32@,System.Int32)">
+            <summary>Pushes 1 value onto the backtracking stack.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.Utilities.StackPush(System.Int32[]@,System.Int32@,System.Int32,System.Int32)">
+            <summary>Pushes 2 values onto the backtracking stack.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.Utilities.StackPush(System.Int32[]@,System.Int32@,System.Int32,System.Int32,System.Int32)">
+            <summary>Pushes 3 values onto the backtracking stack.</summary>
+        </member>
+        <member name="T:ExtensionVersion">
+            <summary>
+            Extension version, created at build time.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,7 @@
+C:\Users\pc\Downloads\DotNet FSE\Week3\KafkaChatClient\obj\Debug\net8.0-windows\KafkaChatClient.csproj.AssemblyReference.cache
+C:\Users\pc\Downloads\DotNet FSE\Week3\KafkaChatClient\obj\Debug\net8.0-windows\KafkaChatClient.Form1.resources
+C:\Users\pc\Downloads\DotNet FSE\Week3\KafkaChatClient\obj\Debug\net8.0-windows\KafkaChatClient.csproj.GenerateResource.cache
+C:\Users\pc\Downloads\DotNet FSE\Week3\KafkaChatClient\obj\Debug\net8.0-windows\KafkaChatClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\Downloads\DotNet FSE\Week3\KafkaChatClient\obj\Debug\net8.0-windows\KafkaChatClient.AssemblyInfoInputs.cache
+C:\Users\pc\Downloads\DotNet FSE\Week3\KafkaChatClient\obj\Debug\net8.0-windows\KafkaChatClient.AssemblyInfo.cs
+C:\Users\pc\Downloads\DotNet FSE\Week3\KafkaChatClient\obj\Debug\net8.0-windows\KafkaChatClient.csproj.CoreCompileInputs.cache

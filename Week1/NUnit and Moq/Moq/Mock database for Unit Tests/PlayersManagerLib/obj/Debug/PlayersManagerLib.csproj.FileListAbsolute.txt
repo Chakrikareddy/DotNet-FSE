@@ -1,0 +1,6 @@
+C:\Users\pc\Downloads\Week1\NUnit and Moq\Moq\PlayersManagerLib\bin\Debug\PlayersManagerLib.dll
+C:\Users\pc\Downloads\Week1\NUnit and Moq\Moq\PlayersManagerLib\bin\Debug\PlayersManagerLib.pdb
+C:\Users\pc\Downloads\Week1\NUnit and Moq\Moq\PlayersManagerLib\obj\Debug\PlayersManagerLib.csproj.AssemblyReference.cache
+C:\Users\pc\Downloads\Week1\NUnit and Moq\Moq\PlayersManagerLib\obj\Debug\PlayersManagerLib.csproj.CoreCompileInputs.cache
+C:\Users\pc\Downloads\Week1\NUnit and Moq\Moq\PlayersManagerLib\obj\Debug\PlayersManagerLib.dll
+C:\Users\pc\Downloads\Week1\NUnit and Moq\Moq\PlayersManagerLib\obj\Debug\PlayersManagerLib.pdb

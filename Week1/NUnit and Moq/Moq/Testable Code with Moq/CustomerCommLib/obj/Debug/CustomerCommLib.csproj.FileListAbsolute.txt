@@ -1,0 +1,6 @@
+C:\Users\pc\Downloads\Week1\NUnit and Moq\Moq\CustomerCommLib\bin\Debug\CustomerCommLib.dll
+C:\Users\pc\Downloads\Week1\NUnit and Moq\Moq\CustomerCommLib\bin\Debug\CustomerCommLib.pdb
+C:\Users\pc\Downloads\Week1\NUnit and Moq\Moq\CustomerCommLib\obj\Debug\CustomerCommLib.csproj.AssemblyReference.cache
+C:\Users\pc\Downloads\Week1\NUnit and Moq\Moq\CustomerCommLib\obj\Debug\CustomerCommLib.csproj.CoreCompileInputs.cache
+C:\Users\pc\Downloads\Week1\NUnit and Moq\Moq\CustomerCommLib\obj\Debug\CustomerCommLib.dll
+C:\Users\pc\Downloads\Week1\NUnit and Moq\Moq\CustomerCommLib\obj\Debug\CustomerCommLib.pdb

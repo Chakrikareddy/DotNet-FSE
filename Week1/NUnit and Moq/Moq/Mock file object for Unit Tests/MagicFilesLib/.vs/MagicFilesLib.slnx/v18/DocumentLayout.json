@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\pc\\Downloads\\Week1\\NUnit and Moq\\Moq\\MagicFilesLib\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{01DDB4FD-BFF5-4A8F-B10C-B4373FCEE2F5}|..\\DirectoryExplorer.Tests\\DirectoryExplorer.Tests.csproj|c:\\users\\pc\\downloads\\week1\\nunit and moq\\moq\\directoryexplorer.tests\\directoryexplorertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A613CB1-AFEA-485C-8555-386BCE4E01B7}|MagicFilesLib.csproj|c:\\users\\pc\\downloads\\week1\\nunit and moq\\moq\\magicfileslib\\directoryexplorer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A613CB1-AFEA-485C-8555-386BCE4E01B7}|MagicFilesLib.csproj|solutionrelative:directoryexplorer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A613CB1-AFEA-485C-8555-386BCE4E01B7}|MagicFilesLib.csproj|c:\\users\\pc\\downloads\\week1\\nunit and moq\\moq\\magicfileslib\\idirectoryexplorer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A613CB1-AFEA-485C-8555-386BCE4E01B7}|MagicFilesLib.csproj|solutionrelative:idirectoryexplorer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DirectoryExplorerTests.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Downloads\\Week1\\NUnit and Moq\\Moq\\DirectoryExplorer.Tests\\DirectoryExplorerTests.cs",
+              "RelativeDocumentMoniker": "..\\DirectoryExplorer.Tests\\DirectoryExplorerTests.cs",
+              "ToolTip": "C:\\Users\\pc\\Downloads\\Week1\\NUnit and Moq\\Moq\\DirectoryExplorer.Tests\\DirectoryExplorerTests.cs",
+              "RelativeToolTip": "..\\DirectoryExplorer.Tests\\DirectoryExplorerTests.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAUwCwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T17:29:42.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DirectoryExplorer.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Downloads\\Week1\\NUnit and Moq\\Moq\\MagicFilesLib\\DirectoryExplorer.cs",
+              "RelativeDocumentMoniker": "DirectoryExplorer.cs",
+              "ToolTip": "C:\\Users\\pc\\Downloads\\Week1\\NUnit and Moq\\Moq\\MagicFilesLib\\DirectoryExplorer.cs",
+              "RelativeToolTip": "DirectoryExplorer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T17:23:51.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IDirectoryExplorer.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Downloads\\Week1\\NUnit and Moq\\Moq\\MagicFilesLib\\IDirectoryExplorer.cs",
+              "RelativeDocumentMoniker": "IDirectoryExplorer.cs",
+              "ToolTip": "C:\\Users\\pc\\Downloads\\Week1\\NUnit and Moq\\Moq\\MagicFilesLib\\IDirectoryExplorer.cs",
+              "RelativeToolTip": "IDirectoryExplorer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T17:22:43.249Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
